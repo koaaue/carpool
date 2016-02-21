@@ -19,7 +19,7 @@ namespace ToogleAPIDistance
             string destination = "2014 Commerce St，Dallas, TX 75201";
             Console.WriteLine("origin: " + origin);
             Console.WriteLine("destination: " + destination);
-            string time = "2016-02-12 08:40";
+            string time = "2016-02-12 08:40"; //Dallas time
             DateTime myTime = DateTime.ParseExact(time, "yyyy-MM-dd HH:mm",
             System.Globalization.CultureInfo.InvariantCulture).AddHours(6);
             TimeSpan span = (myTime - new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc));
@@ -39,7 +39,6 @@ namespace ToogleAPIDistance
             string url = @"https://maps.googleapis.com/maps/api/directions/json?origin=" + origin +
                 "&destination=" + destination + "&departure_time="+timestamp+"&key=AIzaSyBO9khwJBKM4II1pxZT89ItprSLiYj9eho";
             var client = new WebClient();
-           // Console.WriteLine(url);
             var result = client.DownloadData(url);
             
             var json = Encoding.UTF8.GetString(result);
