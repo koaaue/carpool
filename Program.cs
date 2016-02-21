@@ -24,6 +24,12 @@ namespace ToogleAPIDistance
             System.Globalization.CultureInfo.InvariantCulture).AddHours(6);
             TimeSpan span = (myTime - new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc));
             int timestamp = (int)span.TotalSeconds;
+            int current = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+            if(current > timestamp)
+            {
+                Console.WriteLine("this is past time. plz use future time");
+                return;
+            }
             GetMap(origin, destination, timestamp+"");
         }
 
