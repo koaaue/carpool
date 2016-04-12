@@ -35,7 +35,6 @@ namespace CarPoolDemo.Controllers
             ViewBag.to = to;
             ViewBag.time = time;
             return View();
-        }
 
 
         private static string GetMap(string origin, string destination, string time)
